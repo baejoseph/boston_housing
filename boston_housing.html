@@ -13214,17 +13214,26 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Minimum price of the data</span>
 <span class="n">minimum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
+<span class="n">minimum_rm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">features</span><span class="p">[</span><span class="s1">&#39;RM&#39;</span><span class="p">])</span>
+<span class="n">minimum_lstat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">features</span><span class="p">[</span><span class="s1">&#39;LSTAT&#39;</span><span class="p">])</span>
+<span class="n">minimum_pt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">features</span><span class="p">[</span><span class="s1">&#39;PTRATIO&#39;</span><span class="p">])</span>
 
 <span class="c1"># TODO: Maximum price of the data</span>
 <span class="n">maximum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
+<span class="n">maximum_rm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">features</span><span class="p">[</span><span class="s1">&#39;RM&#39;</span><span class="p">])</span>
+<span class="n">maximum_lstat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">features</span><span class="p">[</span><span class="s1">&#39;LSTAT&#39;</span><span class="p">])</span>
+<span class="n">maximum_pt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">features</span><span class="p">[</span><span class="s1">&#39;PTRATIO&#39;</span><span class="p">])</span>
 
 <span class="c1"># TODO: Mean price of the data</span>
 <span class="n">mean_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
+<span class="n">mean_rm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">features</span><span class="p">[</span><span class="s1">&#39;RM&#39;</span><span class="p">])</span>
+<span class="n">mean_lstat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">features</span><span class="p">[</span><span class="s1">&#39;LSTAT&#39;</span><span class="p">])</span>
+<span class="n">mean_pt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">features</span><span class="p">[</span><span class="s1">&#39;PTRATIO&#39;</span><span class="p">])</span>
 
 <span class="c1"># TODO: Median price of the data</span>
 <span class="n">median_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
@@ -13239,6 +13248,18 @@ div#notebook {
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Mean price: ${}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mean_price</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Median price ${}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">median_price</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Standard deviation of prices: ${}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">std_price</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Minimum room: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">minimum_rm</span><span class="p">))</span> 
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Maximum room: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">maximum_rm</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Mean room: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mean_rm</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Minimum LSTAT: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">minimum_lstat</span><span class="p">))</span> 
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Maximum LSTAT: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">maximum_lstat</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Mean LSTAT: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mean_lstat</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Minimum PTRATIO: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">minimum_pt</span><span class="p">))</span> 
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Maximum PTRATIO: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">maximum_pt</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Mean PTRATIO: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mean_pt</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13262,6 +13283,15 @@ Maximum price: $1024800.0
 Mean price: $454342.944785
 Median price $438900.0
 Standard deviation of prices: $165171.131544
+Minimum room: 3.561
+Maximum room: 8.398
+Mean room: 6.24028834356
+Minimum LSTAT: 1.98
+Maximum LSTAT: 37.97
+Mean LSTAT: 12.9396319018
+Minimum PTRATIO: 12.6
+Maximum PTRATIO: 22.0
+Mean PTRATIO: 18.5165644172
 </pre>
 </div>
 </div>
@@ -13298,6 +13328,12 @@ Standard deviation of prices: $165171.131544
 <li><strong>increase</strong> with increasing <code>'RM'</code>,</li>
 <li><strong>decrease</strong> with increasing <code>'LSTAT'</code>,</li>
 <li><strong>decrease</strong> with increasing <code>'PTRATIO'</code>.</li>
+</ul>
+<p>The reasons why:</p>
+<ul>
+<li><code>'RM'</code>: More rooms in a house means bigger, more expensive house, all else being equal.</li>
+<li><code>'LSTAT'</code>: Higher percentage of lower class workers in the neighbourhood is likely to correlate with higher crime rate, lower quality infrastructure, and low beautification levels in the area. These all bring down house prices.</li>
+<li><code>'PTRATIO'</code>: Higher ratio of students to teachers could point to lower levels of resources for the schools in the area, and would likely be correlated with undesirable areas especially for people with school-age kids. Brings down the house prices.</li>
 </ul>
 
 </div>
@@ -13390,12 +13426,16 @@ Standard deviation of prices: $165171.131544
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Calculate the performance of this model</span>
 <span class="n">score</span> <span class="o">=</span> <span class="n">performance_metric</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span> <span class="mf">7.8</span><span class="p">,</span> <span class="mf">5.3</span><span class="p">])</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Model has a coefficient of determination, R^2, of {:.3f}.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">))</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span> <span class="mf">7.8</span><span class="p">,</span> <span class="mf">5.3</span><span class="p">],</span> <span class="s1">&#39;bo&#39;</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="s1">&#39;r-&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13415,6 +13455,35 @@ Standard deviation of prices: $165171.131544
 <pre>Model has a coefficient of determination, R^2, of 0.923.
 </pre>
 </div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[35]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&lt;matplotlib.lines.Line2D at 0x1a15753450&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1a15ea59d0&gt;]</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
 </div>
 
 </div>
@@ -13442,7 +13511,7 @@ Standard deviation of prices: $165171.131544
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> Yes, I consider this model to have successfully captured the variation of the target variable, with an R2 score so close to 1.</p>
+<p><strong>Answer:</strong> Yes, I consider this model to have successfully captured the variation of the target variable, with an R2 score so close to 1. R2 score of 0.923 means that 92.3% of the variance in the target variable can be predicted from the prediction. As seen in the above plot, the predicted and actual values lie very close to the the unit gradient line.</p>
 
 </div>
 </div>
@@ -13466,14 +13535,14 @@ Standard deviation of prices: $165171.131544
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;train_test_split&#39;</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 
 <span class="c1"># TODO: Shuffle and split the data into training and testing subsets</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">prices</span><span class="p">,</span>  <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">prices</span><span class="p">,</span>  <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span>
 
 <span class="c1"># Success</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Training and testing split was successful.&quot;</span><span class="p">)</span>
@@ -13517,6 +13586,8 @@ Standard deviation of prices: $165171.131544
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong> You never want to use the same data to train and test a model. Splitting up the dataset into an appropriate ratio of training and testing subsets allow us to train the model, and then use the testing subset to test the model.</p>
+<p>More specifically, suppose we used all of the dataset to train and also test the model. While the model will likely perform well in the test (in fact, as well as it did in the training, in this particular set up!), this is no indication of model actually being able to generalise well. (GOOD FIT). It is likely to be biased towards the training (and therefore test) set, and so any kind of OVERFITTING cannot be detected in this set up. This is why we need training/testing split.</p>
+<p>The need for a test dataset that is not involved in the decicion making about models is why we have cross validation set.</p>
 
 </div>
 </div>
@@ -13709,7 +13780,14 @@ Think about the pros and cons of adding more training points based on if the tra
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> Grid search is a way to tune hyper-parameters by first generating a grid of parameter values specified by the user, and by optimizing them.</p>
+<p><strong>Answer:</strong> Grid search is a way to tune hyper-parameters by:</p>
+<ul>
+<li>first generating a grid of parameter values specified by the user, and then </li>
+<li>by selecting each point on the grid (corresponding to a unique combination of the values of the hyper-parameters)</li>
+<li>finally, for each combination of the hyper-parameter values, fitting the model to the available data.</li>
+<li>For each fitted model, we also specify the 'scoring function'.</li>
+<li>At the end of the grid search, we choose the values of the hyper-parameter that produces the fitted model with the highest scoring function.</li>
+</ul>
 
 </div>
 </div>
@@ -13732,7 +13810,8 @@ Think about the pros and cons of adding more training points based on if the tra
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> k-fold cross validation is dividng up the data into k buckets, and doing the training k times, each time, one bucket taking turns to be the test set. This helps prevent overfitting that can happen in a grid search.</p>
+<p><strong>Answer:</strong> k-fold cross validation is dividng up the training data into k buckets, and then doing the training k times, each time, one bucket taking turns to be the cross-validation set, while the k-1 buckets serve as the training set. This helps prevent overfitting that can happen in a grid search.</p>
+<p>Test set is only used after k-fold cross validation and grid search are done, when all hyper-parameters are set, and the model is fitted, only then do we use the test set.</p>
 
 </div>
 </div>
@@ -13964,6 +14043,34 @@ Predicted selling price for Client 3&#39;s home: $947,800.00
 <li>Predicted selling price for Client 3's home is USD 947,800.00.</li>
 </ul>
 <p>These prices seem reasonable given the values for the respective features.</p>
+<ul>
+<li>Client 1: His house features a very average number of rooms, average poverty levels, and averat PT ratios (see below for statistics). It is not surprising that his predicted house price is also close to the mean/median price.</li>
+<li>Client 2: Client's house features room numbers close to the min, poverty levels close to the max, and PT ratio also close to the max found in dataset. It is not surprising that the price predicted is close to the min price.</li>
+<li>Client 3: The exact opposite of Client 2. Hence the price close to max.</li>
+</ul>
+<p>Some statistics from the Boston House Data:</p>
+<ul>
+<li>Minimum price: USD105k</li>
+<li>Maximum price: USD1024k</li>
+<li>Mean price: USD454k</li>
+<li>Median price USD439k</li>
+<li><p>Standard deviation of prices: USD165k</p>
+</li>
+<li><p>Minimum room: 3.6</p>
+</li>
+<li>Maximum room: 8.4</li>
+<li><p>Mean room: 6.24</p>
+</li>
+<li><p>Minimum LSTAT: 2.0</p>
+</li>
+<li>Maximum LSTAT: 38.0</li>
+<li><p>Mean LSTAT: 12.9</p>
+</li>
+<li><p>Minimum PTRATIO: 12.6</p>
+</li>
+<li>Maximum PTRATIO: 22.0</li>
+<li>Mean PTRATIO: 18.5</li>
+</ul>
 
 </div>
 </div>
